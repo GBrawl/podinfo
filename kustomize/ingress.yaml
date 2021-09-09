@@ -3,6 +3,10 @@ kind: Ingress
 metadata:
   name: podinfo
 spec:
+  tls:
+  - hosts:
+      - podinfo.apps.openshift.bvb.local
+    secretName: custom-certs-default
   rules:
     - host: podinfo.apps.openshift.bvb.local
       http:
